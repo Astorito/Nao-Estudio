@@ -1,25 +1,5 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(ls -la ~/)",
-      "Skill(run)",
-      "Skill(run:*)",
-      "Bash(python3 -m http.server 8080)",
-      "Bash(echo \"PID: $!\")",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)",
-      "mcp__Claude_in_Chrome__navigate",
-      "mcp__Claude_in_Chrome__tabs_context_mcp",
-      "Bash(gcloud auth *)",
-      "Bash(gcloud config *)",
-      "Bash(pkill -f \"python3 -m http.server 8888\")",
-      "Bash(python3 -m http.server 8888)",
-      "Bash(python3 -m http.server 9090)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:9090/)",
-      "mcp__Claude_in_Chrome__list_connected_browsers",
-      "Bash(git init *)",
-      "Bash(git add *)",
-      "Bash(git commit *)",
-      "Bash(git config *)"
-    ]
+    "defaultMode": "bypassPermissions"
   }
 }
