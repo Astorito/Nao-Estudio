@@ -186,8 +186,8 @@ window.addEventListener('scroll', () => {
     heroEl.style.opacity = String(1 - p);
     heroBg.style.opacity = String(1 - p);
     canvas.style.pointerEvents = p > 0.5 ? 'none' : 'auto';
-    header.style.opacity = String(p);
-    header.style.pointerEvents = p > 0.3 ? 'auto' : 'none';
+    header.style.opacity = '1';
+    header.style.pointerEvents = 'auto';
   } else {
     canvas.style.opacity = '1';
     heroEl.style.opacity = '1';
@@ -315,13 +315,41 @@ function masonryLayout() {
   const rowSize = 4; // matches grid-auto-rows in CSS
   const cols    = window.innerWidth <= 900 ? 2 : 3;
   const colWidth = (grid.clientWidth - (cols - 1) * rowGap) / cols;
+  const cards   = Array.from(grid.querySelectorAll('.collage-card'));
 
-  grid.querySelectorAll('.collage-card').forEach(card => {
+  // Calculate natural span for each card
+  const spans = cards.map(card => {
     const img = card.querySelector('img');
-    if (!img.naturalWidth) return;
-    const cardHeight = colWidth * (img.naturalHeight / img.naturalWidth);
-    const span = Math.ceil((cardHeight + rowGap) / (rowSize + rowGap));
-    card.style.gridRow = 'span ' + span;
+    if (!img.naturalWidth) return 0;
+    const h   = colWidth * (img.naturalHeight / img.naturalWidth);
+    return Math.ceil((h + rowGap) / (rowSize + rowGap));
+  });
+
+  spans.forEach((span, i) => {
+    if (span > 0) cards[i].style.gridRow = 'span ' + span;
+  });
+
+  // Equalize column bottoms so no column ends short
+  const colSpans   = Array(cols).fill(0);
+  const lastInCol  = Array(cols).fill(-1);
+  cards.forEach((_, i) => {
+    const col = i % cols;
+    colSpans[col] += spans[i];
+    lastInCol[col] = i;
+  });
+
+  const maxSpan = Math.max(...colSpans);
+  colSpans.forEach((cs, col) => {
+    const diff = maxSpan - cs;
+    if (diff <= 0 || lastInCol[col] < 0) return;
+    const card    = cards[lastInCol[col]];
+    const newSpan = spans[lastInCol[col]] + diff;
+    card.style.gridRow = 'span ' + newSpan;
+    // Stretch image to cover the extra height
+    const img = card.querySelector('img');
+    img.style.height      = '100%';
+    img.style.objectFit   = 'cover';
+    img.style.objectPosition = 'center';
   });
 }
 

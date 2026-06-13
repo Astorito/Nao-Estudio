@@ -87,7 +87,7 @@ canvas {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(235, 234, 229, 0.15);
+  background: rgba(235, 234, 229, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(0,0,0,0.06);
@@ -128,7 +128,7 @@ body.dark-mode #hero-bg {
   background-image: url('bg-dark.jpg');
 }
 body.dark-mode .header-inner {
-  background: rgba(20, 20, 18, 0.15);
+  background: rgba(20, 20, 18, 0.85);
   border-color: rgba(255,255,255,0.08);
 }
 body.dark-mode .header-nav a { color: #f4f3ef; }
