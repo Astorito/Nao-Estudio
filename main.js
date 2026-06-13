@@ -308,48 +308,12 @@ requestAnimationFrame(animate);
 
 // ─── DARK MODE TOGGLE ────────────────────────────────────────────────────────
 const themeToggle = document.getElementById('theme-toggle');
+let darkMode = false;
+
 themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-});
-
-// ─── PROJECT FILTERS ─────────────────────────────────────────────────────────
-const filterBtns   = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    let delay = 0;
-    projectCards.forEach(card => {
-      const match = filter === 'all' || card.dataset.category === filter;
-      if (match) {
-        card.classList.remove('hidden-filter');
-        card.classList.remove('visible');
-        setTimeout(() => card.classList.add('visible'), delay);
-        delay += 60;
-      } else {
-        card.classList.add('hidden-filter');
-        card.classList.remove('visible');
-      }
-    });
-  });
-});
-
-// ─── STAGGERED REVEAL ON SCROLL (IntersectionObserver) ───────────────────────
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-projectCards.forEach((card, i) => {
-  const col   = i % 3;
-  const delay = col * 80 + Math.floor(i / 3) * 40;
-  card.style.transitionDelay = `${delay}ms`;
-  revealObserver.observe(card);
+  darkMode = !darkMode;
+  const bg = darkMode ? "url('bg-dark.jpg')" : "url('bg.jpg?v=3')";
+  document.body.style.backgroundImage = bg;
+  heroBg.style.backgroundImage = bg;
+  document.body.classList.toggle('dark-mode', darkMode);
 });

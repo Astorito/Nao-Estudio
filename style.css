@@ -241,119 +241,96 @@ section { padding: 120px 7vw; }
 }
 
 /* ── PROYECTOS ───────────────────────────────────────────────────────────── */
-#proyectos { border-top: 1px solid rgba(0,0,0,0.08); }
+#proyectos {
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-left: 0;
+  padding-right: 0;
+}
+#proyectos .section-intro {
+  padding-left: 7vw;
+  padding-right: 7vw;
+}
 
-/* Filtros */
-.project-filters {
+/* ── CARRUSELES INFINITOS ────────────────────────────────────────────────── */
+.carousel-wrap {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 16px;
+}
+.carousel-wrap:last-child { margin-bottom: 0; }
+
+@keyframes scroll-ltr {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes scroll-rtl {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.carousel-track {
   display: flex;
-  gap: 4px;
-  margin-bottom: 48px;
-  flex-wrap: wrap;
-}
-
-.filter-btn {
-  background: transparent;
-  border: 1px solid transparent;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #3a3a38;
-  padding: 8px 18px;
-  border-radius: 999px;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.filter-btn:hover {
-  background: rgba(0,0,0,0.07);
-  color: #0a0a09;
-}
-
-.filter-btn.active {
-  background: #0a0a09;
-  color: #f4f3ef;
-  border-color: #0a0a09;
-}
-
-/* Project grid */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+  will-change: transform;
+}
+.carousel-ltr { animation: scroll-ltr 40s linear infinite; }
+.carousel-rtl { animation: scroll-rtl 40s linear infinite; }
+
+.carousel-wrap:hover .carousel-track {
+  animation-play-state: paused;
 }
 
-/* Card reveal animation */
-.project-card {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-}
-.project-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.project-card.hidden-filter {
-  display: none;
-}
-
-/* Card image + hover */
-.card-image {
+.c-card {
+  flex-shrink: 0;
+  width: 260px;
+  aspect-ratio: 3 / 4;
   position: relative;
   overflow: hidden;
-  aspect-ratio: 3/4;
+  border-radius: 6px;
   cursor: pointer;
 }
-
-.card-image img {
+.c-card img {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.6s ease;
 }
+.c-card:hover img { transform: scale(1.04); }
 
-.card-image:hover img { transform: scale(1.04); }
-
-.card-overlay {
+.c-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 28px 24px;
+  padding: 24px 20px;
   transition: background 0.4s ease;
 }
+.c-card:hover .c-overlay { background: rgba(0,0,0,0.52); }
 
-.card-image:hover .card-overlay {
-  background: rgba(0,0,0,0.52);
-}
-
-.card-overlay h3 {
-  font-size: 1rem;
+.c-overlay h3 {
+  font-size: 0.95rem;
   font-weight: 400;
   color: #f4f3ef;
   letter-spacing: 0.01em;
+  margin-bottom: 4px;
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
-  margin-bottom: 6px;
+  transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
 }
-
-.card-overlay h4 {
-  font-size: 0.72rem;
+.c-overlay p {
+  font-size: 0.68rem;
   font-weight: 300;
   color: rgba(244,243,239,0.75);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.35s ease 0.1s, transform 0.35s ease 0.1s;
+  transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
 }
-
-.card-image:hover .card-overlay h3,
-.card-image:hover .card-overlay h4 {
+.c-card:hover .c-overlay h3,
+.c-card:hover .c-overlay p {
   opacity: 1;
   transform: translateY(0);
 }
@@ -394,13 +371,13 @@ footer {
     padding: 80px 5vw;
     gap: 48px;
   }
-  .project-grid { grid-template-columns: repeat(2, 1fr); }
   #site-header { width: min(90vw, 560px); }
+  .c-card { width: 200px; }
 }
 
 @media (max-width: 600px) {
-  .project-grid { grid-template-columns: 1fr; }
   section { padding: 80px 5vw; }
   .title { letter-spacing: 0.25em; }
   footer { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .c-card { width: 160px; }
 }

@@ -90,108 +90,44 @@
         <h2 class="section-title">Obra construida</h2>
       </div>
 
-      <!-- Filtros -->
-      <div class="project-filters">
-        <button class="filter-btn active" data-filter="all">Todos</button>
-        <button class="filter-btn" data-filter="residencial">Residencial</button>
-        <button class="filter-btn" data-filter="colectivo">Colectivo</button>
-        <button class="filter-btn" data-filter="cultural">Cultural</button>
+      <!-- Carrusel 1: izquierda -->
+      <div class="carousel-wrap">
+        <div class="carousel-track carousel-ltr">
+          <div class="c-card"><img src="https://picsum.photos/seed/valdes/480/640" alt="Casa Valdés" loading="lazy" /><div class="c-overlay"><h3>Casa Valdés</h3><p>Bariloche, Río Negro</p></div></div>
+          <div class="c-card"><img src="https://picsum.photos/seed/nahuel/480/640" alt="Conjunto Nahuel" loading="lazy" /><div class="c-overlay"><h3>Conjunto Nahuel</h3><p>Bariloche, Río Negro</p></div></div>
+          <div class="c-card"><img src="https://picsum.photos/seed/viento/480/640" alt="Centro Cultural Viento Sur" loading="lazy" /><div class="c-overlay"><h3>Centro Cultural Viento Sur</h3><p>Ushuaia, Tierra del Fuego</p></div></div>
+          <div class="c-card"><img src="https://picsum.photos/seed/limay/480/640" alt="Refugio Limay" loading="lazy" /><div class="c-overlay"><h3>Refugio Limay</h3><p>Neuquén, Patagonia</p></div></div>
+          <div class="c-card"><img src="https://picsum.photos/seed/pehuen/480/640" alt="Casa Pehuén" loading="lazy" /><div class="c-overlay"><h3>Casa Pehuén</h3><p>Villa La Angostura, Neuquén</p></div></div>
+          <div class="c-card"><img src="https://picsum.photos/seed/manso/480/640" alt="Hotel Río Manso" loading="lazy" /><div class="c-overlay"><h3>Hotel Río Manso</h3><p>San Martín de los Andes</p></div></div>
+          <!-- duplicado para loop infinito -->
+          <div class="c-card" aria-hidden="true"><img src="https://picsum.photos/seed/valdes/480/640" alt="" loading="lazy" /><div class="c-overlay"><h3>Casa Valdés</h3><p>Bariloche, Río Negro</p></div></div>
+          <div class="c-card" aria-hidden="true"><img src="https://picsum.photos/seed/nahuel/480/640" alt="" loading="lazy" /><div class="c-overlay"><h3>Conjunto Nahuel</h3><p>Bariloche, Río Negro</p></div></div>
+          <div class="c-card" aria-hidden="true"><img src="https://picsum.photos/seed/viento/480/640" alt="" loading="lazy" /><div class="c-overlay"><h3>Centro Cultural Viento Sur</h3><p>Ushuaia, Tierra del Fuego</p></div></div>
+          <div class="c-card" aria-hidden="true"><img src="https://picsum.photos/seed/limay/480/640" alt="" loading="lazy" /><div class="c-overlay"><h3>Refugio Limay</h3><p>Neuquén, Patagonia</p></div></div>
+          <div class="c-card" aria-hidden="true"><img src="https://picsum.photos/seed/pehuen/480/640" alt="" loading="lazy" /><div class="c-overlay"><h3>Casa Pehuén</h3><p>Villa La Angostura, Neuquén</p></div></div>
+          <div class="c-card" aria-hidden="true"><img src="https://picsum.photos/seed/manso/480/640" alt="" loading="lazy" /><div class="c-overlay"><h3>Hotel Río Manso</h3><p>San Martín de los Andes</p></div></div>
+        </div>
       </div>
 
-      <!-- Grid de proyectos -->
-      <div class="project-grid">
-
-        <div class="project-card" data-category="residencial">
-          <div class="card-image">
-            <img src="https://picsum.photos/seed/valdes/700/900" alt="Casa Valdés" loading="lazy" />
-            <div class="card-overlay">
-              <h3>Casa Valdés</h3>
-              <h4>Bariloche, Río Negro</h4>
-            </div>
-          </div>
+      <!-- Carrusel 2: derecha -->
+      <div class="carousel-wrap">
+        <div class="carousel-track carousel-rtl">
+          <div class="c-card"><img src="https://picsum.photos/seed/paine/480/640" alt="Centro de Interpretación" loading="lazy" /><div class="c-overlay"><h3>Centro de Interpretación</h3><p>Torres del Paine, Chile</p></div></div>
+          <div class="c-card"><img src="https://picsum.photos/seed/lengas/480/640" alt="Cabaña Las Lengas" loading="lazy" /><div class="c-overlay"><h3>Cabaña Las Lengas</h3><p>El Chaltén, Santa Cruz</p></div></div>
+          <div class="c-card"><img src="https://picsum.photos/seed/civica/480/640" alt="Plaza Cívica" loading="lazy" /><div class="c-overlay"><h3>Plaza Cívica</h3><p>Bariloche, Río Negro</p></div></div>
+          <div class="c-card"><img src="https://picsum.photos/seed/sureño/480/640" alt="Residencia Sureña" loading="lazy" /><div class="c-overlay"><h3>Residencia Sureña</h3><p>Osorno, Chile</p></div></div>
+          <div class="c-card"><img src="https://picsum.photos/seed/austral/480/640" alt="Casa Austral" loading="lazy" /><div class="c-overlay"><h3>Casa Austral</h3><p>Punta Arenas, Chile</p></div></div>
+          <div class="c-card"><img src="https://picsum.photos/seed/cordillera/480/640" alt="Refugio Cordillera" loading="lazy" /><div class="c-overlay"><h3>Refugio Cordillera</h3><p>Mendoza, Argentina</p></div></div>
+          <!-- duplicado para loop infinito -->
+          <div class="c-card" aria-hidden="true"><img src="https://picsum.photos/seed/paine/480/640" alt="" loading="lazy" /><div class="c-overlay"><h3>Centro de Interpretación</h3><p>Torres del Paine, Chile</p></div></div>
+          <div class="c-card" aria-hidden="true"><img src="https://picsum.photos/seed/lengas/480/640" alt="" loading="lazy" /><div class="c-overlay"><h3>Cabaña Las Lengas</h3><p>El Chaltén, Santa Cruz</p></div></div>
+          <div class="c-card" aria-hidden="true"><img src="https://picsum.photos/seed/civica/480/640" alt="" loading="lazy" /><div class="c-overlay"><h3>Plaza Cívica</h3><p>Bariloche, Río Negro</p></div></div>
+          <div class="c-card" aria-hidden="true"><img src="https://picsum.photos/seed/sureño/480/640" alt="" loading="lazy" /><div class="c-overlay"><h3>Residencia Sureña</h3><p>Osorno, Chile</p></div></div>
+          <div class="c-card" aria-hidden="true"><img src="https://picsum.photos/seed/austral/480/640" alt="" loading="lazy" /><div class="c-overlay"><h3>Casa Austral</h3><p>Punta Arenas, Chile</p></div></div>
+          <div class="c-card" aria-hidden="true"><img src="https://picsum.photos/seed/cordillera/480/640" alt="" loading="lazy" /><div class="c-overlay"><h3>Refugio Cordillera</h3><p>Mendoza, Argentina</p></div></div>
         </div>
+      </div>
 
-        <div class="project-card" data-category="colectivo">
-          <div class="card-image">
-            <img src="https://picsum.photos/seed/nahuel/700/900" alt="Conjunto Nahuel" loading="lazy" />
-            <div class="card-overlay">
-              <h3>Conjunto Nahuel</h3>
-              <h4>Bariloche, Río Negro</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-category="cultural">
-          <div class="card-image">
-            <img src="https://picsum.photos/seed/viento/700/900" alt="Centro Cultural Viento Sur" loading="lazy" />
-            <div class="card-overlay">
-              <h3>Centro Cultural Viento Sur</h3>
-              <h4>Ushuaia, Tierra del Fuego</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-category="residencial">
-          <div class="card-image">
-            <img src="https://picsum.photos/seed/limay/700/900" alt="Refugio Limay" loading="lazy" />
-            <div class="card-overlay">
-              <h3>Refugio Limay</h3>
-              <h4>Neuquén, Patagonia</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-category="cultural">
-          <div class="card-image">
-            <img src="https://picsum.photos/seed/paine/700/900" alt="Centro de Interpretación" loading="lazy" />
-            <div class="card-overlay">
-              <h3>Centro de Interpretación</h3>
-              <h4>Torres del Paine, Chile</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-category="residencial">
-          <div class="card-image">
-            <img src="https://picsum.photos/seed/lengas/700/900" alt="Cabaña Las Lengas" loading="lazy" />
-            <div class="card-overlay">
-              <h3>Cabaña Las Lengas</h3>
-              <h4>El Chaltén, Santa Cruz</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-category="colectivo">
-          <div class="card-image">
-            <img src="https://picsum.photos/seed/manso/700/900" alt="Hotel Río Manso" loading="lazy" />
-            <div class="card-overlay">
-              <h3>Hotel Río Manso</h3>
-              <h4>San Martín de los Andes</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-category="residencial">
-          <div class="card-image">
-            <img src="https://picsum.photos/seed/pehuen/700/900" alt="Casa Pehuén" loading="lazy" />
-            <div class="card-overlay">
-              <h3>Casa Pehuén</h3>
-              <h4>Villa La Angostura, Neuquén</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-category="cultural">
-          <div class="card-image">
-            <img src="https://picsum.photos/seed/civica/700/900" alt="Plaza Cívica" loading="lazy" />
-            <div class="card-overlay">
-              <h3>Plaza Cívica</h3>
-              <h4>Bariloche, Río Negro</h4>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /project-grid -->
     </section>
 
     <footer id="contacto">
