@@ -287,67 +287,54 @@ section { padding: 120px 7vw; }
 /* ── PROYECTOS ───────────────────────────────────────────────────────────── */
 #proyectos {
   border-top: 1px solid rgba(0,0,0,0.08);
-  padding: 120px 0;
+  padding: 120px 0 0;
 }
 #proyectos .section-intro {
   padding: 0 7vw 64px;
 }
 
-/* ── CARRUSEL INFINITO ───────────────────────────────────────────────────── */
-.carousel-wrap {
-  overflow: hidden;
-  width: 100%;
+/* ── COLLAGE MASONRY ─────────────────────────────────────────────────────── */
+.collage-grid {
+  columns: 3;
+  column-gap: 6px;
+  padding: 0 2vw;
 }
 
-@keyframes scroll-ltr {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-.carousel-track {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 12px;
-  will-change: transform;
-  width: max-content;
-}
-.carousel-ltr { animation: scroll-ltr 50s linear infinite; }
-
-.carousel-wrap:hover .carousel-track {
-  animation-play-state: paused;
-}
-
-.c-card {
-  flex-shrink: 0;
-  width: 220px;
-  aspect-ratio: 3 / 4;
+.collage-card {
+  break-inside: avoid;
+  margin-bottom: 6px;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
 }
-.c-card img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.6s ease;
-}
-.c-card:hover img { transform: scale(1.04); }
 
-.c-overlay {
+.collage-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.65s ease;
+  filter: grayscale(20%);
+}
+
+.collage-card:hover img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+.collage-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 20px 18px;
+  padding: 22px 20px;
   transition: background 0.4s ease;
 }
-.c-card:hover .c-overlay { background: rgba(0,0,0,0.55); }
 
-.c-overlay h3 {
+.collage-card:hover .collage-overlay { background: rgba(0,0,0,0.52); }
+
+.collage-overlay h3 {
   font-size: 0.9rem;
   font-weight: 400;
   color: #f4f3ef;
@@ -357,18 +344,20 @@ section { padding: 120px 7vw; }
   transform: translateY(8px);
   transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
 }
-.c-overlay p {
-  font-size: 0.65rem;
+
+.collage-overlay p {
+  font-size: 0.62rem;
   font-weight: 300;
-  color: rgba(244,243,239,0.75);
+  color: rgba(244,243,239,0.72);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
 }
-.c-card:hover .c-overlay h3,
-.c-card:hover .c-overlay p {
+
+.collage-card:hover .collage-overlay h3,
+.collage-card:hover .collage-overlay p {
   opacity: 1;
   transform: translateY(0);
 }
@@ -410,12 +399,13 @@ footer {
     gap: 48px;
   }
   #site-header { width: min(90vw, 560px); }
-  .c-card { width: 200px; }
+  .collage-grid { columns: 2; }
 }
 
 @media (max-width: 600px) {
   section { padding: 80px 5vw; }
   .title { letter-spacing: 0.25em; }
   footer { flex-direction: column; gap: 16px; align-items: flex-start; }
-  .c-card { width: 160px; }
+  .collage-grid { columns: 2; column-gap: 4px; padding: 0 1vw; }
+  .collage-card { margin-bottom: 4px; }
 }
