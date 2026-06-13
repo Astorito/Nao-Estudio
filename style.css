@@ -296,14 +296,15 @@ section { padding: 120px 7vw; }
 
 /* ── COLLAGE MASONRY ─────────────────────────────────────────────────────── */
 .collage-grid {
-  columns: 3;
-  column-gap: 6px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 4px;
+  gap: 6px;
   padding: 0 2vw;
+  align-items: start;
 }
 
 .collage-card {
-  break-inside: avoid;
-  margin-bottom: 6px;
   position: relative;
   overflow: hidden;
   border-radius: 8px;
@@ -400,13 +401,12 @@ footer {
     gap: 48px;
   }
   #site-header { width: min(90vw, 560px); }
-  .collage-grid { columns: 2; }
+  .collage-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
   section { padding: 80px 5vw; }
   .title { letter-spacing: 0.25em; }
   footer { flex-direction: column; gap: 16px; align-items: flex-start; }
-  .collage-grid { columns: 2; column-gap: 4px; padding: 0 1vw; }
-  .collage-card { margin-bottom: 4px; }
+  .collage-grid { grid-template-columns: repeat(2, 1fr); gap: 4px; padding: 0 1vw; }
 }

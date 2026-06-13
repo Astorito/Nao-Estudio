@@ -306,3 +306,32 @@ function animate(now) {
 
 requestAnimationFrame(animate);
 
+// ─── MASONRY COLLAGE ──────────────────────────────────────────────────────────
+function masonryLayout() {
+  const grid = document.querySelector('.collage-grid');
+  if (!grid) return;
+
+  const rowGap  = 6;
+  const rowSize = 4; // matches grid-auto-rows in CSS
+  const cols    = window.innerWidth <= 900 ? 2 : 3;
+  const colWidth = (grid.clientWidth - (cols - 1) * rowGap) / cols;
+
+  grid.querySelectorAll('.collage-card').forEach(card => {
+    const img = card.querySelector('img');
+    if (!img.naturalWidth) return;
+    const cardHeight = colWidth * (img.naturalHeight / img.naturalWidth);
+    const span = Math.ceil((cardHeight + rowGap) / (rowSize + rowGap));
+    card.style.gridRow = 'span ' + span;
+  });
+}
+
+document.querySelectorAll('.collage-card img').forEach(img => {
+  if (img.complete && img.naturalWidth > 0) {
+    masonryLayout();
+  } else {
+    img.addEventListener('load', masonryLayout);
+  }
+});
+
+window.addEventListener('resize', masonryLayout);
+
