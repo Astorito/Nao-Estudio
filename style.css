@@ -57,6 +57,7 @@ canvas {
   letter-spacing: 0.4em;
   padding-left: 0.4em;
   margin-bottom: 1.2rem;
+  color: #ffffff;
 }
 .title span { margin-right: 1.5em; }
 
@@ -140,7 +141,6 @@ body.dark-mode .section-label { color: #888; }
 body.dark-mode .section-text { color: #9a9690; }
 body.dark-mode .subtitle { color: #9a9690; }
 body.dark-mode .title { color: #c8c5be; }
-body.dark-mode .team-name { color: #c8c5be; }
 body.dark-mode #nosotros { border-top-color: rgba(255,255,255,0.08); }
 body.dark-mode #proyectos { border-top-color: rgba(255,255,255,0.08); }
 body.dark-mode footer { border-top-color: rgba(255,255,255,0.08); }
@@ -273,12 +273,18 @@ section { padding: 120px 7vw; }
 }
 
 .team-name {
-  font-size: 0.9rem;
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  font-size: 0.95rem;
   font-weight: 400;
-  color: #1a1a1a;
+  color: #f4f3ef;
   letter-spacing: 0.02em;
-  padding-left: 2px;
+  z-index: 2;
+  transition: opacity 0.3s ease;
 }
+
+.team-card:hover .team-name { opacity: 0; }
 
 /* ── PROYECTOS ───────────────────────────────────────────────────────────── */
 #proyectos {
