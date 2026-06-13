@@ -168,8 +168,6 @@ const scrollEl = document.getElementById('scroll-container');
 const canvas   = renderer.domElement;
 canvas.style.transition = 'opacity 0.7s ease';
 
-let headerShown = false;
-
 window.addEventListener('scroll', () => {
   if (!scrollEnabled) return;
 
@@ -179,8 +177,6 @@ window.addEventListener('scroll', () => {
 
   const t = heroMax > 0 ? Math.min(Math.max(scrollY / heroMax, 0), 1) : 0;
   targetZ = CAM_START_Z + t * (CAM_END_Z - CAM_START_Z);
-
-  if (t > 0.88 && !headerShown) { header.classList.add('visible'); headerShown = true; }
 
   const fadeStart = heroMax;
   const fadeEnd   = heroMax + window.innerHeight * 0.6;

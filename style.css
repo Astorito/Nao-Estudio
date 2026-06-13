@@ -77,12 +77,10 @@ canvas {
   left: 50%;
   transform: translateX(-50%);
   width: min(36vw, 380px);
-  z-index: 10;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
+  z-index: 1;
+  opacity: 1;
+  pointer-events: auto;
 }
-#site-header.visible { opacity: 1; pointer-events: auto; }
 
 .header-inner {
   display: flex;
@@ -298,8 +296,7 @@ section { padding: 120px 7vw; }
 /* ── CARRUSEL INFINITO ───────────────────────────────────────────────────── */
 .carousel-wrap {
   overflow: hidden;
-  width: calc(100% - 14vw);
-  margin: 0 7vw;
+  width: 100%;
 }
 
 @keyframes scroll-ltr {
