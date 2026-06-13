@@ -75,7 +75,7 @@ canvas {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(58vw, 560px);   /* más angosto que antes */
+  width: min(36vw, 380px);
   z-index: 10;
   opacity: 0;
   pointer-events: none;
@@ -135,6 +135,19 @@ body.dark-mode .header-nav a { color: #f4f3ef; }
 body.dark-mode .header-nav a:hover { background: rgba(255,255,255,0.08); }
 body.dark-mode .icon-btn { color: #f4f3ef; }
 body.dark-mode .icon-btn:hover { background: rgba(255,255,255,0.1); }
+body.dark-mode .section-title { color: #c8c5be; }
+body.dark-mode .section-label { color: #888; }
+body.dark-mode .section-text { color: #9a9690; }
+body.dark-mode .subtitle { color: #9a9690; }
+body.dark-mode .title { color: #c8c5be; }
+body.dark-mode .architect-info h3 { color: #c8c5be; }
+body.dark-mode .bio { color: #9a9690; }
+body.dark-mode .role { color: #777; }
+body.dark-mode #nosotros { border-top-color: rgba(255,255,255,0.08); }
+body.dark-mode #proyectos { border-top-color: rgba(255,255,255,0.08); }
+body.dark-mode footer { border-top-color: rgba(255,255,255,0.08); }
+body.dark-mode .footer-label { color: #666; }
+body.dark-mode .footer-email { color: #c8c5be; border-bottom-color: rgba(255,255,255,0.2); }
 
 /* ── MAIN CONTENT ────────────────────────────────────────────────────────── */
 #main-content {
@@ -252,8 +265,8 @@ section { padding: 120px 7vw; }
 /* ── CARRUSEL INFINITO ───────────────────────────────────────────────────── */
 .carousel-wrap {
   overflow: hidden;
-  width: 100%;
-  padding: 0;
+  width: calc(100% - 14vw);
+  margin: 0 7vw;
 }
 
 @keyframes scroll-ltr {
