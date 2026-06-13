@@ -243,12 +243,10 @@ section { padding: 120px 7vw; }
 /* ── PROYECTOS ───────────────────────────────────────────────────────────── */
 #proyectos {
   border-top: 1px solid rgba(0,0,0,0.08);
-  padding-left: 0;
-  padding-right: 0;
+  padding: 120px 0;
 }
 #proyectos .section-intro {
-  padding-left: 7vw;
-  padding-right: 7vw;
+  padding: 0 7vw 64px;
 }
 
 /* ── CARRUSEL INFINITO ───────────────────────────────────────────────────── */
@@ -265,8 +263,11 @@ section { padding: 120px 7vw; }
 
 .carousel-track {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 12px;
   will-change: transform;
+  width: max-content;
 }
 .carousel-ltr { animation: scroll-ltr 50s linear infinite; }
 
