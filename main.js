@@ -306,6 +306,12 @@ function animate(now) {
 
 requestAnimationFrame(animate);
 
+// ─── DARK MODE TOGGLE ────────────────────────────────────────────────────────
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
+
 // ─── PROJECT FILTERS ─────────────────────────────────────────────────────────
 const filterBtns   = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');

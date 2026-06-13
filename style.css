@@ -92,21 +92,8 @@ canvas {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(0,0,0,0.06);
   border-radius: 999px;
-  padding: 9px 12px;
+  padding: 9px 12px 9px 20px;
 }
-
-.header-left { display: flex; align-items: center; gap: 2px; }
-
-.logo-icon {
-  width: 30px; height: 30px;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(0,0,0,0.05);
-  border-radius: 50%;
-  color: #333;
-  flex-shrink: 0;
-  margin-right: 4px;
-}
-.logo-icon svg { width: 15px; height: 15px; }
 
 .header-nav { display: flex; align-items: center; }
 .header-nav a {
@@ -123,30 +110,31 @@ canvas {
 }
 .header-nav a:hover { opacity: 1; background: rgba(0,0,0,0.05); }
 
-.header-right { display: flex; align-items: center; gap: 5px; }
-
 .icon-btn {
   background: none; border: none; cursor: pointer;
   padding: 7px 9px; border-radius: 999px; color: #333;
   display: flex; align-items: center;
   transition: background 0.15s;
+  flex-shrink: 0;
 }
 .icon-btn:hover { background: rgba(0,0,0,0.06); }
 
-.inquire-btn {
-  background: rgba(20,20,18,0.88);
+/* ── DARK MODE ───────────────────────────────────────────────────────────── */
+body.dark-mode {
+  background-image: url('bg-dark.jpg');
   color: #f4f3ef;
-  border: none; cursor: pointer;
-  font-family: inherit;
-  font-size: 11px; font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 7px 16px;
-  border-radius: 999px;
-  transition: background 0.15s;
 }
-.inquire-btn:hover { background: rgba(20,20,18,1); }
+body.dark-mode #hero-bg {
+  background-image: url('bg-dark.jpg');
+}
+body.dark-mode .header-inner {
+  background: rgba(20, 20, 18, 0.82);
+  border-color: rgba(255,255,255,0.08);
+}
+body.dark-mode .header-nav a { color: #f4f3ef; }
+body.dark-mode .header-nav a:hover { background: rgba(255,255,255,0.08); }
+body.dark-mode .icon-btn { color: #f4f3ef; }
+body.dark-mode .icon-btn:hover { background: rgba(255,255,255,0.1); }
 
 /* ── MAIN CONTENT ────────────────────────────────────────────────────────── */
 #main-content {
