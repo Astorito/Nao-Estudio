@@ -306,14 +306,3 @@ function animate(now) {
 
 requestAnimationFrame(animate);
 
-// ─── DARK MODE TOGGLE ────────────────────────────────────────────────────────
-const themeToggle = document.getElementById('theme-toggle');
-let darkMode = false;
-
-themeToggle.addEventListener('click', () => {
-  darkMode = !darkMode;
-  const bg = darkMode ? "url('bg-dark.jpg')" : "url('bg.jpg?v=3')";
-  document.body.style.backgroundImage = bg;
-  heroBg.style.backgroundImage = bg;
-  document.body.classList.toggle('dark-mode', darkMode);
-});
