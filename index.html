@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estudio Nao</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header: aparece al final del hero -->
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <div class="logo-icon">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 14 C14 10 17 7 21 7 C25 7 27 10 27 14 C27 18 24 21 20 21 C15 21 11 17 11 12 C11 6 16 2 22 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <nav class="header-nav">
+          <a href="#nosotros">Proyectos</a>
+          <a href="#nosotros">Nosotros</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn" aria-label="Modo oscuro">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+          </svg>
+        </button>
+        <a href="#contacto" class="inquire-btn">Contacto</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fondo del hero (bg.jpg, detrás del canvas) -->
+  <div id="hero-bg"></div>
+
+  <!-- Hero fijo: título centrado sobre fondo beige -->
+  <div id="hero-content">
+    <div class="logo-container">
+      <h1 class="title"><span>Estudio</span>Nao</h1>
+      <p class="subtitle">arquitectura en la patagonia</p>
+    </div>
+  </div>
+
+  <!-- Scroll container: da la altura para el dolly de Three.js -->
+  <div id="scroll-container"></div>
+
+  <!-- ── SECCIONES NORMALES (debajo del hero) ─────────────────────────── -->
+  <main id="main-content">
+
+    <!-- NOSOTROS -->
+    <section id="nosotros">
+      <div class="section-intro">
+        <span class="section-label">Nosotros</span>
+        <h2 class="section-title">Diseñamos desde<br>el territorio</h2>
+        <p class="section-text">
+          Estudio Nao nace de la convicción de que la arquitectura debe responder al paisaje que la rodea.
+          Trabajamos en la Patagonia desde 2018, construyendo espacios que dialogan con el viento, la luz y la piedra.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <div class="architect-card">
+          <div class="architect-photo">
+            <img src="https://picsum.photos/seed/architect-f/480/600" alt="Lucía Fernández" loading="lazy" />
+          </div>
+          <div class="architect-info">
+            <h3>Lucía Fernández</h3>
+            <p class="role">Arquitecta — Fundadora</p>
+            <p class="bio">
+              Egresada de la FADU-UBA con posgrado en Bruselas. Dirige los proyectos residenciales y el desarrollo conceptual del estudio. Su obra ha sido reconocida en bienales de arquitectura latinoamericana.
+            </p>
+          </div>
+        </div>
+
+        <div class="architect-card">
+          <div class="architect-photo">
+            <img src="https://picsum.photos/seed/architect-m/480/600" alt="Mateo Rivas" loading="lazy" />
+          </div>
+          <div class="architect-info">
+            <h3>Mateo Rivas</h3>
+            <p class="role">Arquitecto — Co-Fundador</p>
+            <p class="bio">
+              Formado en Mendoza y Santiago de Chile. Especializado en construcción con materiales locales y bioclimática. Lidera los proyectos de mayor escala y la relación con el entorno natural.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+      <div class="section-intro">
+        <span class="section-label">Proyectos</span>
+        <h2 class="section-title">Obra construida</h2>
+      </div>
+
+      <!-- Filtros -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="residencial">Residencial</button>
+        <button class="filter-btn" data-filter="colectivo">Colectivo</button>
+        <button class="filter-btn" data-filter="cultural">Cultural</button>
+      </div>
+
+      <!-- Grid de proyectos -->
+      <div class="project-grid">
+
+        <div class="project-card" data-category="residencial">
+          <div class="card-image">
+            <img src="https://picsum.photos/seed/valdes/700/900" alt="Casa Valdés" loading="lazy" />
+            <div class="card-overlay">
+              <h3>Casa Valdés</h3>
+              <h4>Bariloche, Río Negro</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="colectivo">
+          <div class="card-image">
+            <img src="https://picsum.photos/seed/nahuel/700/900" alt="Conjunto Nahuel" loading="lazy" />
+            <div class="card-overlay">
+              <h3>Conjunto Nahuel</h3>
+              <h4>Bariloche, Río Negro</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="cultural">
+          <div class="card-image">
+            <img src="https://picsum.photos/seed/viento/700/900" alt="Centro Cultural Viento Sur" loading="lazy" />
+            <div class="card-overlay">
+              <h3>Centro Cultural Viento Sur</h3>
+              <h4>Ushuaia, Tierra del Fuego</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="residencial">
+          <div class="card-image">
+            <img src="https://picsum.photos/seed/limay/700/900" alt="Refugio Limay" loading="lazy" />
+            <div class="card-overlay">
+              <h3>Refugio Limay</h3>
+              <h4>Neuquén, Patagonia</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="cultural">
+          <div class="card-image">
+            <img src="https://picsum.photos/seed/paine/700/900" alt="Centro de Interpretación" loading="lazy" />
+            <div class="card-overlay">
+              <h3>Centro de Interpretación</h3>
+              <h4>Torres del Paine, Chile</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="residencial">
+          <div class="card-image">
+            <img src="https://picsum.photos/seed/lengas/700/900" alt="Cabaña Las Lengas" loading="lazy" />
+            <div class="card-overlay">
+              <h3>Cabaña Las Lengas</h3>
+              <h4>El Chaltén, Santa Cruz</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="colectivo">
+          <div class="card-image">
+            <img src="https://picsum.photos/seed/manso/700/900" alt="Hotel Río Manso" loading="lazy" />
+            <div class="card-overlay">
+              <h3>Hotel Río Manso</h3>
+              <h4>San Martín de los Andes</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="residencial">
+          <div class="card-image">
+            <img src="https://picsum.photos/seed/pehuen/700/900" alt="Casa Pehuén" loading="lazy" />
+            <div class="card-overlay">
+              <h3>Casa Pehuén</h3>
+              <h4>Villa La Angostura, Neuquén</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="cultural">
+          <div class="card-image">
+            <img src="https://picsum.photos/seed/civica/700/900" alt="Plaza Cívica" loading="lazy" />
+            <div class="card-overlay">
+              <h3>Plaza Cívica</h3>
+              <h4>Bariloche, Río Negro</h4>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /project-grid -->
+    </section>
+
+    <footer id="contacto">
+      <p class="footer-label">Estudio Nao — Patagonia, Argentina</p>
+      <a href="mailto:hola@estudionao.com" class="footer-email">hola@estudionao.com</a>
+    </footer>
+
+  </main><!-- /main-content -->
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
