@@ -140,9 +140,7 @@ body.dark-mode .section-label { color: #888; }
 body.dark-mode .section-text { color: #9a9690; }
 body.dark-mode .subtitle { color: #9a9690; }
 body.dark-mode .title { color: #c8c5be; }
-body.dark-mode .architect-info h3 { color: #c8c5be; }
-body.dark-mode .bio { color: #9a9690; }
-body.dark-mode .role { color: #777; }
+body.dark-mode .team-name { color: #c8c5be; }
 body.dark-mode #nosotros { border-top-color: rgba(255,255,255,0.08); }
 body.dark-mode #proyectos { border-top-color: rgba(255,255,255,0.08); }
 body.dark-mode footer { border-top-color: rgba(255,255,255,0.08); }
@@ -207,50 +205,79 @@ section { padding: 120px 7vw; }
   gap: 32px;
 }
 
-/* Cada tarjeta: foto pequeña a la izquierda, texto a la derecha */
-.architect-card {
+/* ── EQUIPO ──────────────────────────────────────────────────────────────── */
+.team-cards {
   display: flex;
-  flex-direction: row;
-  gap: 24px;
+  gap: 20px;
   align-items: flex-start;
 }
 
-.architect-photo {
-  flex-shrink: 0;
-  width: 110px;
-  height: 140px;
-  overflow: hidden;
+.team-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
-.architect-photo img {
+
+.team-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.team-photo img {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(25%);
-  transition: filter 0.4s ease;
+  transition: transform 0.5s ease;
+  filter: grayscale(20%);
 }
-.architect-card:hover .architect-photo img { filter: grayscale(0%); }
 
-.architect-info { flex: 1; padding-top: 4px; }
+.team-card:hover .team-photo img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
 
-.architect-info h3 {
-  font-size: 1rem;
+.team-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 9, 0.72);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px 24px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  border-radius: 20px;
+}
+
+.team-card:hover .team-hover { opacity: 1; }
+
+.team-role {
+  font-size: 0.68rem;
   font-weight: 400;
-  margin-bottom: 4px;
-}
-
-.role {
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #888;
-  margin-bottom: 12px;
+  color: rgba(244,243,239,0.6);
+  margin-bottom: 10px;
 }
 
-.bio {
-  font-size: 0.82rem;
+.team-bio {
+  font-size: 0.85rem;
   font-weight: 300;
-  line-height: 1.65;
-  color: #3a3a38;
+  line-height: 1.6;
+  color: #f4f3ef;
+}
+
+.team-name {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  letter-spacing: 0.02em;
+  padding-left: 2px;
 }
 
 /* ── PROYECTOS ───────────────────────────────────────────────────────────── */
