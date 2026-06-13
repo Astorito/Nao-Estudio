@@ -78,17 +78,18 @@ canvas {
   transform: translateX(-50%);
   width: min(36vw, 380px);
   z-index: 1;
-  opacity: 1;
-  pointer-events: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(235, 234, 229, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(235, 234, 229, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(0,0,0,0.06);
   border-radius: 999px;
   padding: 9px 12px 9px 20px;
@@ -127,7 +128,7 @@ body.dark-mode #hero-bg {
   background-image: url('bg-dark.jpg');
 }
 body.dark-mode .header-inner {
-  background: rgba(20, 20, 18, 0.82);
+  background: rgba(20, 20, 18, 0.15);
   border-color: rgba(255,255,255,0.08);
 }
 body.dark-mode .header-nav a { color: #f4f3ef; }

@@ -186,11 +186,15 @@ window.addEventListener('scroll', () => {
     heroEl.style.opacity = String(1 - p);
     heroBg.style.opacity = String(1 - p);
     canvas.style.pointerEvents = p > 0.5 ? 'none' : 'auto';
+    header.style.opacity = String(p);
+    header.style.pointerEvents = p > 0.3 ? 'auto' : 'none';
   } else {
     canvas.style.opacity = '1';
     heroEl.style.opacity = '1';
     heroBg.style.opacity = '1';
     canvas.style.pointerEvents = 'auto';
+    header.style.opacity = '0';
+    header.style.pointerEvents = 'none';
   }
 }, { passive: true });
 
